@@ -285,11 +285,7 @@ class Broker(mitogen.master.Broker):
     the exuberant syscall expense of EpollPoller, so override it and restore
     the poll() poller.
     """
-#    poller_class = mitogen.core.Poller
-    if mitogen.parent.PollPoller.SUPPORTED:
-        poller_class = mitogen.parent.PollPoller
-    else:
-        poller_class = mitogen.core.Poller
+    poller_class = mitogen.core.Poller
 
 
 class Binding(object):
